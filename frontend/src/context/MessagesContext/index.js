@@ -3,7 +3,7 @@ import io from "socket.io-client";
 import { getMessages, sendMessage } from "../../api/messagesAPI";
 import { toast } from "react-toastify";
 
-const socket = io("http://localhost:5000", {
+const socket = io("https://fluxtalk.onrender.com", {
   reconnection: true,
   reconnectionAttempts: Infinity,
   reconnectionDelay: 1000,
