@@ -1,4 +1,4 @@
-# FluxTalk Frontend
+# FluxTalk
 
 FluxTalk is a basic real-time chat application designed to connect people with instant messaging, secure chats, and seamless group conversations.
 
