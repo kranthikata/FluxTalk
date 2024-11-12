@@ -3,7 +3,7 @@ import axios from "axios";
 export const createChat = (userId) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
   return axios.post(
-    "http://localhost:5000/api/v1/chats/",
+    "https://fluxtalk.onrender.com/api/v1/chats/",
     {
       userId,
     },
@@ -18,7 +18,7 @@ export const createChat = (userId) => {
 
 export const deleteChat = (chatId) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
-  return axios.delete(`http://localhost:5000/api/v1/chats/${chatId}`, {
+  return axios.delete(`https://fluxtalk.onrender.com/api/v1/chats/${chatId}`, {
     headers: { Authorization: `Bearer ${accessToken}` },
   });
 };
@@ -26,7 +26,7 @@ export const deleteChat = (chatId) => {
 export const createGroupChat = (groupName, userIds) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
   return axios.post(
-    "http://localhost:5000/api/v1/chats/group/",
+    "https://fluxtalk.onrender.com/api/v1/chats/group/",
     { name: groupName, users: JSON.stringify(userIds) },
     {
       headers: {
@@ -40,7 +40,7 @@ export const createGroupChat = (groupName, userIds) => {
 export const addUserToGroup = (chatId, userId) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
   return axios.put(
-    "http://localhost:5000/api/v1/chats/groupadd/",
+    "https://fluxtalk.onrender.com/api/v1/chats/groupadd/",
     { chatId, userId },
     {
       headers: {
@@ -54,7 +54,7 @@ export const addUserToGroup = (chatId, userId) => {
 export const removeUserFromGroup = (chatId, userId) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
   return axios.put(
-    "http://localhost:5000/api/v1/chats/groupremove",
+    "https://fluxtalk.onrender.com/api/v1/chats/groupremove",
     { chatId, userId },
     {
       headers: {
@@ -68,7 +68,7 @@ export const removeUserFromGroup = (chatId, userId) => {
 export const renameGroup = (chatId, chatName) => {
   const { accessToken } = JSON.parse(localStorage.getItem("userInfo"));
   return axios.put(
-    "http://localhost:5000/api/v1/chats/rename",
+    "https://fluxtalk.onrender.com/api/v1/chats/rename",
     { chatId, chatName },
     {
       headers: {
